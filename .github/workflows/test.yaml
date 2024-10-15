@@ -1,11 +1,27 @@
-name: hola mundo 
+name: Hola Mundo
 
 on: [push]
 
 jobs:
-uno:
-  runs-on: ubuntu-latest
+  uno:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje
+        run: echo "Hola mundo!!!"
+      - name: Touch File
+        run: |
+          touch hola.txt
+          ls -al
+      - name: Set test
+        run: |
+          echo "Hola mundo" >> hola.txt
+          ls -al
+      - name: Read File
+        run: cat hola.txt
 
-  steps:
-    - name: Mensaje
-      run: echo "Hola mundo Oswaldo"
+  dos:
+    runs-on: ubuntu-latest
+    needs: [uno]
+    steps:
+      - name: Directorio
+        run: ls -al
