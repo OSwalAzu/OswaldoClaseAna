@@ -7,5 +7,5 @@ jobs:
      runs-on: ubuntu-latest
 
       steps:
-    - name: Mensaje
+      - name: Mensaje
       run: echo "Hola mundo Oswaldo"
