@@ -17,7 +17,9 @@ jobs:
           echo "Hola mundo" >> hola.txt
           ls -al
       - name: Read File
-        run: cat hola.txt
+        run: |
+          cat hola.txt
+          ls -al
 
 
   dos:
